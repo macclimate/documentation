@@ -1,0 +1,13 @@
+** If not done already, please go to 'to save as CSVs and replace current param files' and save these as CSVs [to replace the old files in the params folder]. Thank you!
+
+1. Maintaining the sapflow sensors
+	Each spring:
+	- Re-install sensors so signal strength is similar between years
+	- Test sensors in trees to ensure they are functioning
+	- Measure sapflow tree height and DBH. Input DBH in param 			spreadsheet, and use allometric equations in Peichl (2005) to 			attain sapwood area.
+
+2. Calculating the sapflow using parameters
+	
+	At TP39, many sensors were removed since the total of 25 		existed, and some have stopped working (see "TPFS sapflow measurements 2014" excel sheet). Sensors 1 and 5 were tagged with the opposite number, and this was corrected in the param file.
+
+	At TP74, DBH measurements for sensors 1-9 and 15 matched the parameters in the data computer for 2011-2013, however the rest did not and should not be used for those three years. In 2014 and 2015, this site was re-fitted with tags that matched the tree numbers (this was not previously the case) so that DBH can accurately and consistently be updated.

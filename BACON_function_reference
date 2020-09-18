@@ -1,0 +1,157 @@
+=================== BACON Function Reference ===================================
+This document lists the major top-level programs (and subfunctions) used in BACON operations. 
+Programs are arranged by function. Tabbed programs indicate a subfunction called by the preceeding program.
+Symbols are appended to the end of program names to denote a number of different associations with
+documentation and metadata:
+
+LEGEND 
+
+* - Uses files in /Matlab/Config
+^ - Writes files to /Documentation/Logs
+# - Uses files from /Matlab/ubc_PC_setup
+@ - Matlab scripts with site/year specific settings that may need to be edited
+
+
+================================================================================
+
++++++++++++++++++++++++++++++ extraction and plotting
+mcm_extract_main
+	mcm_extract_cpec
+		mcm_extract_datafiles
+			mcm_get_fluxsystem_info@
+		mcm_extract_hhourfiles
+			mcm_get_fluxsystem_info@
+	mcm_metloader*
+		CR1000_metloader*
+
+mcm_quickplot_main
+	mcm_quickplot_chamber
+		mcm_get_fluxsystem_info@
+	mcm_quickplot_met*
+	mcm_quickplot_cpec
+
++++++++++++++++++++++++++++++ met data functions
+
+mcm_metclean*
+
+mcm_metfixer*@
+	mcm_PPTfixer@
+
+mcm_metfill_main
+	mcm_PPTfill
+	mcm_metfill*
+		mcm_fill_SM
+		mcm_fillvars
+
+mcm_SHF
+
+mcm_sapflow_calc
+	Papale_spike_removal2
+	movwin_spike_removal
+
++++++++++++++++++++++++++++++ Flux (CPEC, OPEC, ACS) compiling and output functions
+
+mcm_checkfiles^
+
+mcm_calc_fluxes#
+	ACS_calc_and_save
+	new_calc_and_save
+
+mcm_mat2annual_main
+	mcm_chamber_mat2annual^
+		mcm_get_fluxsystem_info@
+	mcm_CPEC_mat2annual^
+		mcm_get_fluxsystem_info@
+
+mcm_fluxclean_main
+	mcm_fluxclean*
+		mcm_get_fluxsystem_info@
+	OPEC_10min_cleaner*
+	OPEC_EdiRe_cleaner*
+
+mcm_fluxfixer_main
+	mcm_fluxfixer*@
+		mcm_get_fluxsystem_info@
+		mov_window_xcorr
+	OPEC_10min_fixer@
+		OPEC_Rotations
+		OPEC_storage
+			params@
+		mcm_CPEC_outlier_removal @
+			Papale_spike_removal
+			mcm_CPEC_ensemble_clean
+		OPEC_find_intervals
+		OPEC_Burba_correction
+		segment_xcorr
+		mov_window_xcorr
+	OPEC_EdiRe_fixer
+		OPEC_find_intervals
+		segment_xcorr
+		mov_window_xcorr
+		OPEC_storage
+			params@
+		OPEC_Burba_correction
+		mcm_CPEC_outlier_removal@
+			Papale_spike_removal
+			mcm_CPEC_ensemble_clean
+	OPEC_compiler
+
+mcm_CPEC_storage
+	mcm_CPEC_outlier_removal@
+		Papale_spike_removal
+		mcm_CPEC_ensemble_clean
+
+run_mcm_footprint@
+	mcm_footprint
+		params@
+		fetchdist
+		mcm_Schuepp_footprint
+		mcm_footprint_hsieh
+		mcm_footprint_Kljun
+			Kljun_calc_footprint
+
+mcm_edit_gapfilling_defaults
+
+mcm_Gapfill_LE_H_default*
+
+mcm_Gapfill_NEE_default*
+
++++++++++++++++++++++++++++++ data compiling and output functions
+
+mcm_data_compiler*^@
+
+mcm_check_master
+
+mcm_output_FHdata
+
+mcm_CCP_output
+
++++++++++++++++++++++++++++++ automated functions 
+mcm_automated_extraction
+	mcm_auto_extractor
+	mcm_checkfiles (see above)
+
+mcm_automated_calc_fluxes
+	mcm_calc_fluxes (see above)
+	mcm_CPEC_mat2annual (see above)
+	mcm_chamber_mat2annual (see above)
+
+mcm_documentation_compiler
+
+=================================================================================================
+============== Extra material -- selection of updated config/log paths ==========================
+hdr_path = [loadstart 'Matlab/Config/Met/Organizing-Header_OutputTemplate/']; % Changed 01-May-2012
+
+thresh_path = [loadstart 'Matlab/Config/Met/Cleaning-Thresholds/']; % Changed 01-May-2012
+
+tracker_path = [loadstart 'Matlab/Config/Met/Cleaning-BadDataTrackers/']; % Changed 01-May-2012
+
+soil_tracker_path = [ls 'Matlab/Config/Met/Filling-SoilPitKeepLists/']; % Changed 01-May-2012
+
+log_path = [ls 'Documentation/Logs/mcm_checkfiles/']; % Changed 01-May-2012
+
+header_path = [ls 'Matlab/Config/Flux/CPEC/Cleaning-Thresholds/']; % Changed 01-May-2012
+
+thresh_path = [ls 'Matlab/Config/Flux/OPEC/']; % Changed 01-May-2012
+
+header_path = [ls 'Matlab/Config/Flux/CPEC/']; % Changed 01-May-2012

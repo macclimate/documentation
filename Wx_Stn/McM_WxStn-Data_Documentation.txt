@@ -1,0 +1,117 @@
+***McMaster Weather Station (MUWS) -- Data description***
+(full information available at: http://geomedia.mcmaster.ca/muws/index.php
+Last documentation update: 24-January-2014, JJB
+
+* Introduction
+McMaster Weather Station is operated by the Hydrometeorology and Climatology Lab in the School of Geography and Earth Sciences, 
+McMaster University, Hamilton, Ontario, Canada. It is being supervised by Dr. Altaf Arain, Professor in the School. 
+The primary purpose of this weather station is to support undergraduate and graduate teaching and serve the campus and 
+surrounding community in west Hamilton. 
+The station was established in October 2007 and a number of meteorological variables are being measured. Those using data are 
+encouraged to check sensor details. 
+
+Note: A large open space free of surrounding obstacles was not available at McMaster University campus to install this weather station. 
+General Science Building roof top was the most appropriate location, available.  
+================================================================
+* Station location:
+
+McMaster University, 1280 Main Street West, Hamilton, Ontario, L8S 4K1, Canada.
+Latitude: 43°15'  42.93" N
+Longitude: 79°  55'  11.86" W
+Ground elevation: 90 m above sea level
+Roof surface elevation: 114 m above sea level
+
+================================================================
+* Sensor descriptions and heights:
+
+1. Wind sensor at 7m above the roof surface
+- Wind speed and wind direction are measured using R.M. Young Wind Monitor, model 05103. The wind speed sensor is a helicoid-shaped, 
+four-blade propeller-type, anemometer, with fuselage and tail wind vane.
+(http://www.campbellsci.com/05103-l)
+
+2. Radiation sensor at 2m above the roof surface
+- Measured using four-sensor net radiometer, manufactured by the Kipp and Zonen, model CNR1. The radiometer measures the energy 
+balance between incoming short-wave (CM3 sensor) and long-wave (CG3 sensor) radiation versus surface reflected shortwave and outgoing longwave radiation. 
+The CNR1 also includes a sensor to measure the radiometer's internal temperature and a heater that is used to prevent condensation.
+(http://www.kippzonen.com/Product/33/CNR-1)
+
+3. Air temperature and humidity sensors at 2 m above the roof surface
+- Air temperature and relative humidity are measured using Vaisala RH and Temperature Probe, model HMP45C. Probe is covered with a radiation shield. 
+The probe uses a capacitive polymer H chip to measure RH and a PRT to measure temperature.
+(http://www.campbellsci.com/hmp45c-l)
+
+4. Barometer at 1.5 m above the roof surface
+- Atmospheric pressure is measured by R.M. Young Barometric Pressure Sensor, model 61205.
+
+5. Rain gauge at 1 m above the roof surface
+- Precipitation is measured by a R.M. Young Tipping Bucket Rain Gauge, model 52202, which meets the specifications of the World Meteorological Organization (WMO). 
+It is heated for operation in cold temperatures.
+(http://www.campbellsci.ca/52202)
+
+================================================================
+* Data File Description:
+- Data are available as comma-separated, ASCII-encoded files, produced separately for each year.  Three files are created for each year, which reflect the time
+step of measurements:
+1. 15-minute files (e.g. MCM_WX_Met_Stn_Met2_2010.csv) are time series of variables, calculated by the data logging software as the average (or sum) value
+for all 5-second sample measurements within that period.  The values reported represent the mean for the preceding 15 minutes. 
+2*. Hourly files (e.g. MCM_WX_Met_Stn_Met2_2010_Hourly.csv) are aggregated at hourly time steps from the 15-minute files.
+3*. Daily files (e.g. MCM_WX_Met_Stn_Met2_2010_Daily.csv) are aggregated at daily time steps from the 15-minute files.
+
+* Note that some variables (e.g. Albedo) are not well-represented by the hourly and daily aggregation. Therefore, it is recommended for the 15-minute files to be 
+used as the bases for further analyses
+
+================================================================
+* Descriptions of Variables
+
+Year	(EST) 
+JulianDay	(EST) - Day of year (1-365 or 366)
+End_Time	(HrMn_EST) -ending Hour and Minute of samples used to make average
+Month	(EST)
+Day	(EST)
+CM3_DownSW_Avg	(W/m2)	 - Mean down-welling shortwave radiation
+CM3_DownSW_Max	(W/m2)	 - Maximum down-welling shortwave radiation
+CM3_DownSW_Min	(W/m2)	 - Minimum down-welling shortwave radiation
+CM3_UpSW_Avg	(W/m2)	 - Mean up-welling shortwave radiation
+CM3_UpSW_Max	(W/m2)	 - Maximum up-welling shortwave radiation
+CM3_UpSW_Min	(W/m2)	 - Minimum up-welling shortwave radiation
+CNR1_DownLW_Avg	(W/m2)	 - Mean down-welling longwave radiation
+CNR1_UpLW_Avg	(W/m2)	 - Mean up-welling longwave radiation
+CNR1_Temp_Avg	(degC)	 - Mean CNR1 correction temperature (not air temperature)
+CNR1_NetRad_SW_Avg	(W/m2)	 - Mean net shortwave radiation
+CNR1_NetRad_LW_Avg	(W/m2)	 - Mean net longwave radiation
+Albedo_Avg	(n/a)	 - Mean  albedo
+CNR1_DownSW_Avg	(W/m2)	 - Mean down-welling shortwave radiation
+CNR1_UpSW_Avg	(W/m2)	 - Mean up-welling shortwave radiation
+CNR1_NetRad_Avg	(W/m2)	 - Mean net radiation
+PanelTemp_Avg	(degC)	 - Mean datalogger panel temperature (not air temperature)
+HMP45C_AirTemp_Avg	(degC)	 - Mean  air temperature
+HMP45C_AirTemp_Max	(degC)	 - Maximum  air temperature
+HMP45C_AirTemp_Min	(degC)	 - Minimum  air temperature
+WindChill_Avg	(degC)	 - Mean wind chill temperature
+HMP45C_RelHum_Avg	(%)	 - Mean  relative humidity
+HMP45C_RelHum_Max	(%)	 - Maximum  relative humidity
+HMP45C_RelHum_Min	(%)	 - Minimum  relative humidity
+DewPoint_Avg	(degC)	 - Mean  Dewpoint temperature
+VapPres_Avg	(kPa)	 - Mean  vapour pressure
+SatVapPres_Avg	(kPa)	 - Mean  saturation vapour pressure
+Humidex_Avg	(degC)	 - Mean  humidex
+WindSpd_m/s_Avg	(m/s)	 - Mean  wind speed
+WindDir_Avg	(deg)	 - Mean  wind direction
+WindDir_Std_Avg	(deg)	 - Mean  wind direction
+WindSpd_k/h_Avg	(k/h)	 - Mean  wind speed
+WindDir2_Avg	(deg)	 - Mean  wind direction
+WindDir_Std2_Avg	(deg)	 - Mean  wind direction
+WindSpd_k/h_Max	(k/h)	 - Maximum  wind speed
+WindDir_WindSpd_Max	(deg)	 - Wind direction at maximum wind speed  
+WindSpd_k/h_Min	(k/h)	 - Minimum  wind speed
+WindDir_WindSpd_Min	(deg)	 - Wind direction at minimum wind speed  
+Pressure_Raw_Avg	(kPa)	 - Mean  barometric pressure (uncorrected)
+Pressure	(kPa)	 - Mean  barometric pressure (corrected)
+Pressure_Max	(kPa)	 - Maximum  barometric pressure
+Pressure_Min	(kPa)	 - Minimum  barometric pressure
+Precipitation_Sum	(mm)	 - Summed  precipitation
+CertificationCode	(n/a)	 -   
+RevisionDate	(YYYYMMDD)	 - Last date of update  
+
+
+
